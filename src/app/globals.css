@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 255, 255, 255;
+  --text: 26, 32, 44;
+  --primary: 74, 85, 104;
+  --secondary: 113, 128, 150;
+  --accent: 49, 130, 206;
+}
+
+body {
+  color: rgb(var(--text));
+  background: rgb(var(--background));
+}
+
