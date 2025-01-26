@@ -1,6 +1,6 @@
 export default function About() {
     return (
-      <section id="about" className="py-24 px-6 bg-gray-50">
+      <section className="py-24 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">Sobre Nós</h2>
           <p className="text-xl text-gray-600 mb-8">
