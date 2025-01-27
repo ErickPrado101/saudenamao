@@ -2,9 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 
+
 export default function Hero() {
   return (
     <section className="relative py-32 px-6 text-center min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-b from-background to-primary/10">
+
       <div className="relative z-10 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
           Inovação Digital para o Futuro

@@ -17,7 +17,7 @@ const features = [
     title: "Análise Avançada",
     description: "Tome decisões baseadas em dados com nossos insights profundos.",
   },
-]
+] as const
 
 export default function Features() {
   return (
@@ -25,9 +25,9 @@ export default function Features() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-16 text-foreground">Nossos Recursos</h2>
         <div className="grid md:grid-cols-3 gap-12">
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <Card
-              key={index}
+              key={feature.title}
               className="border-none shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-br from-background to-primary/5"
             >
               <CardHeader>
