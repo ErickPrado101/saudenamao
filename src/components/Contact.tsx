@@ -1,41 +1,23 @@
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { MessageCircle } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section className="py-24 px-6 bg-white">
-      <div className="max-w-2xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Entre em Contato</h2>
-        <form className="space-y-6">
-          <div>
-            <Input 
-              type="text" 
-              placeholder="Seu Nome" 
-              className="w-full p-4 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
-            />
-          </div>
-          <div>
-            <Input 
-              type="email" 
-              placeholder="Seu Email" 
-              className="w-full p-4 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
-            />
-          </div>
-          <div>
-            <Textarea 
-              placeholder="Sua Mensagem" 
-              className="w-full p-4 h-32 border border-gray-300 rounded-none focus:outline-none focus:ring-2 focus:ring-gray-500 transition-all duration-300"
-            />
-          </div>
-          <Button
-            type="submit"
-            className="w-full py-3 bg-gradient-to-r from-gray-700 to-gray-500 text-white hover:from-gray-600 hover:to-gray-400 rounded-none transition-all duration-300"
-          >
-            Enviar Mensagem
-          </Button>
-        </form>
+    <section id="contact" className="py-24 px-6 bg-background">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-4xl font-bold mb-8 text-foreground">Entre em Contato</h2>
+        <p className="text-xl mb-12 text-muted-foreground">
+          Estamos prontos para ajudar você a transformar seu negócio. Entre em contato conosco via WhatsApp!
+        </p>
+        <Button
+          className="bg-secondary hover:bg-secondary/90 text-secondary-foreground text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+          onClick={() => window.open("https://wa.me/5527988080038", "_blank")}
+        >
+          <MessageCircle className="mr-2 h-6 w-6" />
+          Fale Conosco no WhatsApp
+        </Button>
       </div>
     </section>
   )
 }
+
