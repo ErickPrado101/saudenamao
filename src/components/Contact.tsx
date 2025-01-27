@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react"
 
 export default function Contact() {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5527988080038", "_blank")
+    window.open("https://wa.me/556181926283", "_blank")
   }
 
   return (
