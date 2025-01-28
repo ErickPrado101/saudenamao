@@ -7,6 +7,9 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Saúde na Mão - Inovação em SaaS e Marketing Digital para Saúde",
   description: "Soluções futuristas de SaaS e marketing digital para revolucionar o setor de saúde.",
+  icons: {
+    icon: "/favico.ico",    
+  },
 }
 
 export default function RootLayout({
