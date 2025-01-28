@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react"
 
 const features = [
     "Tecnologia de ponta em saúde digital",
-    "Equipe de especialistas em SaaS e marketing",
+    "Equipe de especialistas em software e marketing",
     "Soluções personalizadas para cada cliente",
     "Compromisso com inovação contínua",
 ]
