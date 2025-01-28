@@ -1,23 +1,15 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import Link from "next/link"
+import { Heart } from "lucide-react"
 
-const navItems = [
-  { name: "Início", href: "#" },
-  { name: "Recursos", href: "#features" },
-  { name: "Sobre", href: "#about" },
-  { name: "Contato", href: "#contact" },
-] as const
-
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 10)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -25,54 +17,31 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-[#000F24]/80 backdrop-blur-md" : "bg-transparent"}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <a href="#" className="text-2xl font-bold text-primary">
-            FuturoSaaS
-          </a>
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2 group">
+            <Heart className="w-8 h-8 text-[#3E8400] group-hover:text-[#006A3A] transition-colors" />
+            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3E8400] to-[#006A3A] group-hover:from-[#006A3A] group-hover:to-[#3E8400] transition-all duration-300">
+              Saúde na Mão
+            </span>
+          </Link>
+          <div className="hidden md:flex space-x-6">
+            <Link href="#services" className="relative overflow-hidden group">
+              <span className="relative z-10 transition-colors group-hover:text-[#3E8400]">Serviços</span>
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[#3E8400] transform origin-left scale-x-0 transition-transform group-hover:scale-x-100"></span>
+            </Link>
+            <Link href="#contact" className="relative overflow-hidden group">
+              <span className="relative z-10 transition-colors group-hover:text-[#3E8400]">Contato</span>
+              <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[#3E8400] transform origin-left scale-x-0 transition-transform group-hover:scale-x-100"></span>
+            </Link>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            className="md:hidden text-primary hover:text-secondary focus:outline-none"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
         </div>
       </div>
-      {isOpen && (
-        <div className="md:hidden absolute w-full bg-background shadow-md">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   )
 }
+
+export default Navbar
 

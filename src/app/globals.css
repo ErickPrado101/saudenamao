@@ -3,29 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --background: 195, 100%, 98%;
-  --foreground: 195, 100%, 7%;
-  --card: 0 0% 100%;
-  --card-foreground: 195, 100%, 7%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 195, 100%, 7%;
-  --primary: 187, 85%, 35%;
-  --primary-foreground: 195, 100%, 98%;
-  --secondary: 41, 100%, 50%;
-  --secondary-foreground: 195, 100%, 7%;
-  --muted: 195, 10%, 90%;
-  --muted-foreground: 195, 10%, 30%;
-  --accent: 41, 100%, 50%;
-  --accent-foreground: 195, 100%, 7%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 195, 100%, 98%;
-  --border: 195, 10%, 85%;
-  --input: 195, 10%, 85%;
-  --ring: 187, 85%, 35%;
-  --radius: 0.5rem;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 15, 36;
+  --background-end-rgb: 0, 106, 58;
 }
 
 body {
-  @apply bg-background text-foreground;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 

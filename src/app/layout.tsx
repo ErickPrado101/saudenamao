@@ -1,13 +1,12 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import Navbar from "@/components/Navbar"
+import { Space_Grotesk } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "FuturoSaaS - Inovação Digital para o Futuro",
-  description: "Transforme seu negócio com nossas soluções de SaaS e marketing digital de ponta.",
+  title: "Saúde na Mão - Inovação em SaaS e Marketing Digital para Saúde",
+  description: "Soluções futuristas de SaaS e marketing digital para revolucionar o setor de saúde.",
 }
 
 export default function RootLayout({
@@ -16,11 +15,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className="light">
-      <body className={`${inter.className} bg-background text-text`}>
-        <Navbar />
-        <main>{children}</main>
-      </body>
+    <html lang="pt-BR" className="scroll-smooth">
+      <body className={`${spaceGrotesk.className} bg-[#000F24] text-white`}>{children}</body>
     </html>
   )
 }

@@ -1,28 +1,28 @@
-"use client"; // Torna o componente um Client Component
+import Link from "next/link"
 
-import { Button } from "@/components/ui/button";
-
-export default function Hero() {
-  const handleStartNowClick = () => {
-    window.open("https://wa.me/556181926283", "_blank"); // Abre o link do WhatsApp em uma nova aba
-  };
-
+const Hero = () => {
   return (
-    <section className="relative py-32 px-6 text-center min-h-screen flex flex-col justify-center items-center overflow-hidden bg-gradient-to-b from-background to-primary/10">
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-          Inovação Digital para o Futuro
+    <section className="relative pt-32 pb-20 px-6 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000F24] to-[#006A3A] z-0"></div>
+      <div className="absolute inset-0 opacity-30 bg-[url('/grid.svg')] bg-center z-10"></div>
+      <div className="container mx-auto text-center relative z-20">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#3E8400]">
+          Revolucione sua presença digital na saúde
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-foreground/80 max-w-2xl mx-auto">
-          Transforme seu negócio com nossas soluções de SaaS e marketing digital de ponta.
+        <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
+          Soluções inovadoras de SaaS e marketing digital para catapultar seu negócio no setor de saúde para o futuro.
         </p>
-        <Button
-          className="bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:from-primary hover:to-primary text-lg px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-          onClick={handleStartNowClick} 
+        <Link
+          href="#contact"
+          className="inline-block bg-gradient-to-r from-[#3E8400] to-[#006A3A] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#006A3A] hover:to-[#3E8400] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
-          Comece Agora
-        </Button>
+          Inicie sua jornada futurista
+        </Link>
       </div>
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#000F24] to-transparent z-30"></div>
     </section>
-  );
+  )
 }
+
+export default Hero
+
