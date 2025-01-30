@@ -5,7 +5,7 @@ const services = [
     icon: <Server className="w-12 h-12 text-[#3E8400]" />,
     title: "Sistema de Gestão Completo",
     description:
-      "Um sistema intuitivo que facilita o agendamento de consultas, o controle de prontuários, a gestão financeira e o relacionamento com os pacientes.",
+      "Um sistema intuitivo que facilita o agendamento de consultas, o controle de prontuários, a gestão  com os pacientes.",
   },
   {
     icon: <Megaphone className="w-12 h-12 text-[#3E8400]" />,

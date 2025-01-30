@@ -1,4 +1,9 @@
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react"
+import {  Instagram,  Mail } from "lucide-react";
+
+const socialLinks = [
+  { Icon: Instagram, url: "https://www.instagram.com/saasaudenamao/" },
+  { Icon: Mail, url: "mailto:atendimento.saudenamao@gmail.com" },
+];
 
 const Contact = () => {
   return (
@@ -14,13 +19,15 @@ const Contact = () => {
           rel="noopener noreferrer"
           className="inline-block bg-gradient-to-r from-[#3E8400] to-[#006A3A] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#006A3A] hover:to-[#3E8400] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mb-12"
         >
-          Inicie uma Conversa conodco no WhatsApp
+          Inicie uma Conversa conosco no WhatsApp
         </a>
         <div className="flex justify-center space-x-6">
-          {[Facebook, Instagram, Mail, Linkedin].map((Icon, index) => (
+          {socialLinks.map(({ Icon, url }, index) => (
             <a
               key={index}
-              href="#"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white hover:text-[#3E8400] transition-all duration-300 transform hover:scale-110"
             >
               <Icon className="w-8 h-8" />
@@ -29,8 +36,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
-
+export default Contact;
