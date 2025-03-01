@@ -12,12 +12,21 @@ const Hero = () => {
         <p className="text-xl mb-8 max-w-2xl mx-auto text-gray-300">
           Soluções inovadoras de SaaS e marketing digital para catapultar seu negócio no setor de saúde para o futuro.
         </p>
-        <Link
-          href="#contact"
-          className="inline-block bg-gradient-to-r from-[#3E8400] to-[#006A3A] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#006A3A] hover:to-[#3E8400] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-        >
-          Inicie sua jornada futurista
-        </Link>
+        <div className="flex flex-col gap-6 items-center">
+          <Link
+            href="#contact"
+            className="inline-block bg-gradient-to-r from-[#3E8400] to-[#006A3A] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#006A3A] hover:to-[#3E8400] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Inicie sua jornada futurista
+          </Link>
+          <Link
+            href="https://saashealer.vercel.app"
+            className="inline-block bg-gradient-to-r from-[#3E8400] to-[#006A3A] text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-[#006A3A] hover:to-[#3E8400] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Testar demo
+          </Link>
+        </div>
+
       </div>
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#000F24] to-transparent z-30"></div>
     </section>
