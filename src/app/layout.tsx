@@ -19,8 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${spaceGrotesk.className} bg-[#000F24] text-white`}>{children}</body>
+      <body className={`${spaceGrotesk.className} bg-white text-gray-800`}>
+        {children}
+      </body>
     </html>
   )
 }
-
